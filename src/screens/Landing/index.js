@@ -43,7 +43,9 @@ const Landing = ({navigation}, props) => {
           fontFamily: font.POPPINS_MID,
           lineHeight: 21
         }}>{desc}</Text>
-        <Pressable style={{
+        <Pressable
+          onPress={() => navigation.push('LocationAccess')}
+          style={{
           marginTop: scalePx(29),
           alignSelf: 'center',
           alignItems: 'center',
