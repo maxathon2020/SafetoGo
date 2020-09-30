@@ -10,6 +10,8 @@ const LocationAccess = ({navigation}, props) => {
   const title = "Allow Location Access";
   const desc = "Kindly enable your mobile’s location so that we can have a better read of your area’s COVID-19 statistics.";
 
+  const next = () => navigation.push('Questionnaire1');
+
   return (
     <SafeAreaView style={{
       backgroundColor: '#FFFFFF',
@@ -51,6 +53,7 @@ const LocationAccess = ({navigation}, props) => {
           resizeMode={'contain'}
         />
         <Pressable
+          onPress={next}
           style={{
             marginTop: scalePx(28.8),
             alignSelf: 'center',
@@ -71,6 +74,7 @@ const LocationAccess = ({navigation}, props) => {
           }}>{"Skip for now"}</Text>
         </Pressable>
         <Pressable
+          onPress={next}
           style={{
             marginTop: scalePx(9),
             alignSelf: 'center',
