@@ -10,14 +10,14 @@ const Questionnaire1 = ({navigation}, props) => {
   const title = "Personal Questionnaire";
   const desc = "This questionnaire is to understand your daily routine visit so that we can show you a more relevant information amidst of COVID-19.";
 
-  const next = () => {};
+  const next = () => navigation.push('Occupation');
 
   return (
     <SafeAreaView style={{
       backgroundColor: '#FFFFFF',
       width: '100%', height: '100%',
     }}>
-      <StatusBar barStyle={'darks-content'}/>
+      <StatusBar barStyle={'dark-content'}/>
       <ImageBackground
         style={{
           flex: 1,

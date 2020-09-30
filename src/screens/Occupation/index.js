@@ -1,16 +1,18 @@
-import React from 'react';
-import {View, SafeAreaView, StatusBar, Image, Pressable} from 'react-native';
+import React, {useState} from 'react';
+import {View, SafeAreaView, StatusBar, Image, Pressable, TextInput, ScrollView} from 'react-native';
 import {scalePx} from '../../utils';
 import Text from 'react-native-text';
 import {font} from '../../styles';
 import {TopBar} from '../../components';
 import NavigationService from '../../services/NavigationService';
 
-const LocationAccess = ({navigation}, props) => {
-  const title = "Allow Location Access";
-  const desc = "Kindly enable your mobile’s location so that we can have a better read of your area’s COVID-19 statistics.";
+const Occupation = ({navigation}, props) => {
+  const title = "Personal Questionaire";
+  const desc = "What is your occupation?";
 
-  const next = () => navigation.push('Questionnaire1');
+  const [occupation, setOccupation] = useState('');
+
+  const next = () => navigation.push('FrequentVisits');
 
   return (
     <SafeAreaView style={{
@@ -23,7 +25,7 @@ const LocationAccess = ({navigation}, props) => {
         isShowBack={NavigationService.canGoBack()}
         transparent={true}
       />
-      <View style={{
+      <ScrollView style={{
         flex: 1,
         flexDirection: 'column',
         padding: scalePx(20)
@@ -36,47 +38,33 @@ const LocationAccess = ({navigation}, props) => {
           lineHeight: 33
         }}>{title}</Text>
         <Text style={{
-          marginTop: scalePx(18),
+          marginTop: scalePx(10),
           fontSize: 14,
           color: '#4D4D4D',
           fontFamily: font.POPPINS_MID,
           lineHeight: 21
         }}>{desc}</Text>
-        <Image
+        <TextInput
+          value={occupation}
+          onChangeText={setOccupation}
+          placeholder={"Enter your Occupation"}
+          placeholderTextColor={"#4D4D4D40"}
           style={{
-            marginTop: scalePx(24),
-            height: scalePx(85),
-            width: scalePx(85),
-            alignSelf: 'center'
+            marginTop: scalePx(16),
+            borderColor: '#DDDDDD',
+            borderWidth: 1,
+            borderRadius: 15,
+            paddingLeft: 21,
+            paddingRight: 21,
+            color: "#4D4D4D",
+            fontFamily: font.POPPINS_BOLD,
+            lineHeight: 21
           }}
-          source={require('../../assets/icons/gps.png')}
-          resizeMode={'contain'}
         />
         <Pressable
           onPress={next}
           style={{
-            marginTop: scalePx(28.8),
-            alignSelf: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: 15,
-            borderWidth: 1,
-            borderColor: '#7227FF',
-            backgroundColor: '#FFFFFF',
-            width: '100%',
-            height: scalePx(50),
-          }}>
-          <Text style={{
-            fontSize: 14,
-            color: '#7227FF',
-            fontFamily: font.POPPINS_MID,
-            lineHeight: 21
-          }}>{"Skip for now"}</Text>
-        </Pressable>
-        <Pressable
-          onPress={next}
-          style={{
-            marginTop: scalePx(9),
+            marginTop: scalePx(21),
             alignSelf: 'center',
             alignItems: 'center',
             justifyContent: 'center',
@@ -92,11 +80,11 @@ const LocationAccess = ({navigation}, props) => {
             color: '#FFFFFF',
             fontFamily: font.POPPINS_MID,
             lineHeight: 21
-          }}>{"Enable Location"}</Text>
+          }}>{"Next"}</Text>
         </Pressable>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }
 
-export default LocationAccess;
+export default Occupation;

@@ -6,9 +6,9 @@ import {font} from '../../styles';
 import {TopBar} from '../../components';
 import NavigationService from '../../services/NavigationService';
 
-const LocationAccess = ({navigation}, props) => {
-  const title = "Allow Location Access";
-  const desc = "Kindly enable your mobile’s location so that we can have a better read of your area’s COVID-19 statistics.";
+const ThankYou = ({navigation}, props) => {
+  const title = "Thank you for your info!";
+  const desc = "Your provided information is successfully saved. Go ahead and take a look at the dashboard customized just for you!";
 
   const next = () => navigation.push('Questionnaire1');
 
@@ -45,38 +45,17 @@ const LocationAccess = ({navigation}, props) => {
         <Image
           style={{
             marginTop: scalePx(24),
-            height: scalePx(85),
-            width: scalePx(85),
+            height: scalePx(65.8),
+            width: scalePx(77.32),
             alignSelf: 'center'
           }}
-          source={require('../../assets/icons/gps.png')}
+          source={require('../../assets/icons/survey.png')}
           resizeMode={'contain'}
         />
         <Pressable
           onPress={next}
           style={{
-            marginTop: scalePx(28.8),
-            alignSelf: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: 15,
-            borderWidth: 1,
-            borderColor: '#7227FF',
-            backgroundColor: '#FFFFFF',
-            width: '100%',
-            height: scalePx(50),
-          }}>
-          <Text style={{
-            fontSize: 14,
-            color: '#7227FF',
-            fontFamily: font.POPPINS_MID,
-            lineHeight: 21
-          }}>{"Skip for now"}</Text>
-        </Pressable>
-        <Pressable
-          onPress={next}
-          style={{
-            marginTop: scalePx(9),
+            marginTop: scalePx(24.2),
             alignSelf: 'center',
             alignItems: 'center',
             justifyContent: 'center',
@@ -92,11 +71,11 @@ const LocationAccess = ({navigation}, props) => {
             color: '#FFFFFF',
             fontFamily: font.POPPINS_MID,
             lineHeight: 21
-          }}>{"Enable Location"}</Text>
+          }}>{"Go to Dashboard"}</Text>
         </Pressable>
       </View>
     </SafeAreaView>
   )
 }
 
-export default LocationAccess;
+export default ThankYou;
