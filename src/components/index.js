@@ -56,8 +56,10 @@ export const TopBar = React.memo((props) => {
         )}
         {leftButtons &&
         leftButtons.map((item, index) => (
-          <TouchableOpacity onPress={item.onPress} key={index}>
-            <View style={{ height, justifyContent: 'center', marginRight: 5, padding: 5 }}>
+          <TouchableOpacity
+            style={{width: scalePx(50), height: scalePx(50), justifyContent: 'center'}}
+            onPress={item.onPress} key={index}>
+            <View style={{ height, justifyContent: 'center', marginLeft: -scalePx(30), marginRight: 5, padding: 5 }}>
               <Image
                 source={item.image}
                 style={{ alignSelf: 'center', width: scalePx(20), height: scalePx(20) }}

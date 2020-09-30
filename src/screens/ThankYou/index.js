@@ -10,7 +10,7 @@ const ThankYou = ({navigation}, props) => {
   const title = "Thank you for your info!";
   const desc = "Your provided information is successfully saved. Go ahead and take a look at the dashboard customized just for you!";
 
-  const next = () => navigation.push('Questionnaire1');
+  const next = () => navigation.push('Dashboard');
 
   return (
     <SafeAreaView style={{
