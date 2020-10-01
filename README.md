@@ -5,3 +5,6 @@
   1. Bee Teng
   2. Walter Leong
   3. Chan
+
+# How it work
+![ScreenShot](https://drive.google.com/file/d/1zewayOICd54p3mGsSAq0u79FdSqc37tf/view?usp=sharing)
