@@ -21,6 +21,8 @@ const Dashboard = ({navigation}, props) => {
     image: require('../../assets/icons/icon-noti.png')
   }]
 
+  const navToPlaces = () => navigation.push('Places');
+
   const TabSelector = ({onPress, selected, label}) => {
     let style = {
       width: scalePx(166.5),
@@ -221,7 +223,7 @@ const Dashboard = ({navigation}, props) => {
           </SquareTile>
         </View>
         <Pressable
-          onPress={() => {}}
+          onPress={navToPlaces}
           style={{
             marginTop: scalePx(15),
             width: scalePx(335),
@@ -590,9 +592,8 @@ const Dashboard = ({navigation}, props) => {
             </Pressable>
           </View>
         </Pressable>
-
         <Pressable
-          onPress={() => {}}
+          onPress={navToPlaces}
           style={{
             marginTop: scalePx(15),
             width: scalePx(335),

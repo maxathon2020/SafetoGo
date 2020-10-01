@@ -3,5 +3,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 const scalePx = (widthPx) => wp((widthPx / 375) * 100);
 
 module.exports = {
-  scalePx
+  scalePx,
+  wp,
+  hp,
 }

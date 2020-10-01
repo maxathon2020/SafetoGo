@@ -8,6 +8,7 @@ import Occupation from './screens/Occupation';
 import FrequentVisits from './screens/FrequentVisits';
 import ThankYou from './screens/ThankYou';
 import Dashboard from './screens/Dashboard';
+import Places from './screens/Places';
 
 enableScreens();
 const Stack = createNativeStackNavigator();
@@ -26,6 +27,7 @@ const StackNavigator = (props) => {
       <Stack.Screen name={'FrequentVisits'} component={FrequentVisits}/>
       <Stack.Screen name={'ThankYou'} component={ThankYou}/>
       <Stack.Screen name={'Dashboard'} component={Dashboard}/>
+      <Stack.Screen name={'Places'} component={Places}/>
     </Stack.Navigator>
   )
 }

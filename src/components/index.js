@@ -1,8 +1,9 @@
 import React from 'react';
-import {scalePx} from '../utils';
+import {scalePx, wp} from '../utils';
 import {View, Image, TouchableOpacity as RNTouchableOpacity, Pressable} from 'react-native';
 import RNText from 'react-native-text';
-import {font} from '../styles';
+import {font, lightShadow} from '../styles';
+import Modal from 'react-native-modal';
 
 export const Text = RNText;
 
@@ -218,6 +219,64 @@ export class TouchableOpacity extends React.PureComponent {
       </RNTouchableOpacity>
     );
   }
+}
+
+export const BottomActionModal = (props) => {
+  const {
+    icon,
+    title = '',
+    desc = '',
+    containerStyle,
+    onPressPrimaryBtn,
+    labelPrimaryBtn = '',
+    children
+  } = props
+  const smBtnStyle = {
+    height: scalePx(43),
+    width: scalePx(82)
+  }
+
+  return (
+    <Modal
+      animationIn={'fadeIn'}
+      animationInTimine={1000}
+      useNativeDriver={true}
+      hideModalContentWhileAnimating
+      backdropTransitionOutTiming={0}
+      avoidKeyboard={true}
+      style={{margin: 0, justifyContent: 'flex-end'}}
+      transparent={true}
+      {...props}>
+      <View style={{
+        flex: 1,
+        justifyContent: 'flex-end',
+      }}>
+        <View style={[{
+          minHeight: scalePx(301),
+          maxHeight: scalePx(641),
+          alignSelf: 'center',
+          backgroundColor: '#FFFFFF',
+          width: wp(100),
+          borderRadius: 20,
+          borderBottomLeftRadius: 0,
+          borderBottomRightRadius: 0,
+          paddingTop: 0,
+          paddingBottom: 0,
+          ...lightShadow,
+        }, containerStyle]}>
+          <View style={{
+            alignSelf: 'center',
+            width: scalePx(71),
+            height: scalePx(5),
+            backgroundColor: '#EBEBEB',
+            borderRadius: 10,
+            marginTop: scalePx(24)
+          }}/>
+          {children}
+        </View>
+      </View>
+    </Modal>
+  )
 }
 
 
