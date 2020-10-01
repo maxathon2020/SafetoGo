@@ -7,4 +7,4 @@
   3. Chan
 
 # How it work
-![ScreenShot](https://drive.google.com/file/d/1zewayOICd54p3mGsSAq0u79FdSqc37tf/view?usp=sharing)
+![ScreenShot](https://raw.githubusercontent.com/maxathon2020/SafetoGo/master/003.png)
